@@ -103,6 +103,30 @@ a:hover {
 @media (max-width: 768px) {
   .slide-container {
     aspect-ratio: 4 / 3;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.95rem;
+    margin-left: 0.5rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .menu-item h3 {
+    font-size: 1rem;
+  }
+
+  .prev, .next {
+    padding: 0.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -171,6 +195,9 @@ footer {
 /* === Responsive Image Fallback === */
 img {
   background-color: #dee2e6;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* === Accessibility === */
@@ -188,8 +215,9 @@ img {
   z-index: 9999;
 }
 
+/* === Phone Link === */
 .phone-link {
-  color: #ffc107; /* Bootstrap's yellow for better contrast */
+  color: #ffc107;
   font-weight: bold;
   text-decoration: none;
 }
