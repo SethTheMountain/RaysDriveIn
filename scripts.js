@@ -63,3 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.addEventListener('blur', () => slideInterval = setInterval(nextSlide, 5000));
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.querySelector(".navbar");
+  const main = document.querySelector("main");
+
+  if (navbar && main) {
+    const navbarHeight = navbar.offsetHeight;
+    main.style.paddingTop = `${navbarHeight + 16}px`; // add a little spacing
+  }
+});

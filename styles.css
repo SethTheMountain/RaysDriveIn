@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  padding-top: 100px; /* Space for fixed navbar */
 }
 
 h1, h2, h3, h4, h5, h6 {
