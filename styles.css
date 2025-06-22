@@ -187,3 +187,15 @@ img {
   border-radius: 0.375rem;
   z-index: 9999;
 }
+
+.phone-link {
+  color: #ffc107; /* Bootstrap's yellow for better contrast */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.phone-link:hover,
+.phone-link:focus {
+  color: #fff;
+  text-decoration: underline;
+}
