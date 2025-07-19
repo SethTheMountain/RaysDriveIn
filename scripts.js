@@ -1,75 +1,56 @@
-/* === scripts.js === */
+// Slideshow Functionality
 document.addEventListener('DOMContentLoaded', () => {
-  // Smooth Scroll for Navbar Links
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        const targetId = href.substring(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    });
-  });
-
-  // Slideshow Functionality
-  const slides = document.querySelectorAll('.slide');
+  const slides     = document.querySelectorAll('.slide');
   const prevButton = document.querySelector('.prev');
   const nextButton = document.querySelector('.next');
-  let currentSlide = 0;
+  const container  = document.querySelector('.slide-container');
+  let   current    = 0;
+  let   interval;
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('d-block', i === index);
-      slide.classList.toggle('d-none', i !== index);
-      slide.setAttribute('aria-hidden', i !== index);
+  if (!slides.length) return;  // nothing to do
+
+  function showSlide(i) {
+    slides.forEach((s, idx) => {
+      if (idx === i) {
+        s.classList.add('active');
+        s.classList.remove('d-none');
+      } else {
+        s.classList.remove('active');
+        s.classList.add('d-none');
+      }
+      s.setAttribute('aria-hidden', idx !== i);
     });
   }
 
-  if (slides.length > 0) {
-    showSlide(0);
+  function startAuto() {
+    interval = setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 5000);
   }
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+  function stopAuto() {
+    clearInterval(interval);
   }
 
-  function prevSlideFunc() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-  }
+  nextButton.addEventListener('click', () => {
+    stopAuto();
+    current = (current + 1) % slides.length;
+    showSlide(current);
+    startAuto();
+  });
 
-  if (nextButton && prevButton) {
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlideFunc);
+  prevButton.addEventListener('click', () => {
+    stopAuto();
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+    startAuto();
+  });
 
-    // Auto-cycle slides every 5 seconds
-    let slideInterval = setInterval(nextSlide, 5000);
+  container.addEventListener('mouseenter', stopAuto);
+  container.addEventListener('mouseleave', startAuto);
 
-    // Pause slideshow on hover or focus
-    const slideContainer = document.querySelector('.slide-container');
-    if (slideContainer) {
-      slideContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-      slideContainer.addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 5000));
-    }
-
-    prevButton.addEventListener('focus', () => clearInterval(slideInterval));
-    nextButton.addEventListener('focus', () => clearInterval(slideInterval));
-    prevButton.addEventListener('blur', () => slideInterval = setInterval(nextSlide, 5000));
-    nextButton.addEventListener('blur', () => slideInterval = setInterval(nextSlide, 5000));
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const navbar = document.querySelector(".navbar");
-  const main = document.querySelector("main");
-
-  if (navbar && main) {
-    const navbarHeight = navbar.offsetHeight;
-    main.style.paddingTop = `${navbarHeight + 16}px`; // add a little spacing
-  }
+  // initialize
+  showSlide(0);
+  startAuto();
 });

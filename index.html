@@ -15,6 +15,7 @@
         img-src 'self' data:;
         font-src 'self' https://cdn.jsdelivr.net;
         connect-src 'self';
+        frame-src 'self' https://www.google.com;
       ">
 
     <!-- ✅ External Bootstrap CSS (allowed by updated CSP) -->
@@ -67,6 +68,19 @@
         <section id="hours" class="py-5 text-center">
             <h2 class="display-5 fw-bold text-success mb-4">Open Hours</h2>
             <p class="fs-4">Every Day: 6:30 AM – 8:00 PM</p>
+            <p class="fs-4">Breakfast(Mon-Fri): 6:30 AM – 10:30 AM</p>
+            <p class="fs-4">Breakfast(Sat & Sun): 6:30 AM – 11:00 AM</p>
+            <p class="fs-4">Lunch and Dinner(Mon-Fri): 10:30 AM – 8:00 PM</p>
+            <p class="fs-4">Lunch and Dinner(Sat & Sun): 11:00 AM – 8:00 PM</p>
+        </section>
+
+        <section id="map" class="py-5">
+            <h2 class="display-5 fw-bold text-success mb-4 text-center">Our Location</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.7127650082252!2d-86.13944542430575!3d40.50373427142572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8814868970d48d5b%3A0xb469307ffb6f1c29!2sRay's%20Drive%20Inn!5e0!3m2!1sen!2sus!4v1752352436016" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
         </section>
 
         <section id="reviews" class="py-5">
@@ -98,9 +112,12 @@
 
         <section id="menu" class="py-5">
             <h2 class="display-5 fw-bold text-success mb-4 text-center">Menu</h2>
+            <h3 class="display-5 fw-bold text-success mb-4 text-center">Free Delivery - $30.00 Minimum Order</h3>
+            <h3 class="display-5 fw-bold text-success mb-4 text-center"> Call for Carry Out: 765-452-3625</h3>
             <ul class="nav nav-pills justify-content-center mb-4" role="tablist">
                 <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#breakfast" role="tab" aria-selected="true">Breakfast</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#appetizers" role="tab" aria-selected="false">Appetizers</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#Salads" role="tab" aria-selected="false">Salads</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sandwiches" role="tab" aria-selected="false">Sandwiches</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#dinners" role="tab" aria-selected="false">Dinners</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#sides" role="tab" aria-selected="false">Sides</button></li>
@@ -225,6 +242,10 @@
                         <p>$6.69</p>
                     </div>
                     <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Breakfast Bowl</h3>
+                        <p>$10.49</p>
+                    </div>
+                    <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">One Egg & Toast</h3>
                         <p>$3.25</p>
                     </div>
@@ -235,50 +256,6 @@
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Two Eggs Hashbrowns & Toast</h3>
                         <p>$5.99</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Egg Sandwich</h3>
-                        <p>$3.75</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Bacon or Sausage or Smoked Sausage Sandwich</h3>
-                        <p>$4.95</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Bacon & Egg Sandwich</h3>
-                        <p>$4.99</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Sausage & Egg Sandwich</h3>
-                        <p>$4.99</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Ham & Egg Sandwich</h3>
-                        <p>$6.99</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Ham Steak Sandwich</h3>
-                        <p>$6.39</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Pancake (1)</h3>
-                        <p>$4.79</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Shortstack (2)</h3>
-                        <p>$5.49</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Stack (3)</h3>
-                        <p>$6.69</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">French Toast</h3>
-                        <p>$6.69</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Breakfast Bowl</h3>
-                        <p>$10.49</p>
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">One Egg</h3>
@@ -363,16 +340,12 @@
                         <p>$10.29</p>
                     </div>
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Chicken Wings (6)</h3>
+                        <h3 class="fs-5 fw-bold text-success">Chicken Wings Or Hot Wings (6)</h3>
                         <p>$8.29</p>
                     </div>
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Chicken Wings (12)</h3>
+                        <h3 class="fs-5 fw-bold text-success">Chicken Wings Or Hot Wings (12)</h3>
                         <p>$10.29</p>
-                    </div>
-                    <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Hot Wings</h3>
-                        <p>$8.29</p>
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Fritter Critter</h3>
@@ -510,11 +483,11 @@
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Little Castle</h3>
-                        <p>$5.79</p>
+                        <p>$3.99</p>
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Little Castles (3)</h3>
-                        <p>$7.19</p>
+                        <p>$5.79</p>
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Fish</h3>
@@ -550,7 +523,40 @@
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Sloppy Joe</h3>
-                        <p>$3.49</p>
+                        <p>$3.99</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">French Fries</h3>
+                        <p>$3.99</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Spicy French Fries</h3>
+                        <p>$4.59</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Tater Tots</h3>
+                        <p>$3.99</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Vegetable Soup</h3>
+                        <p>$5.79</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Chili Soup</h3>
+                        <p>$5.99</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Potato Soup</h3>
+                        <p>$6.99</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Cup of Soup</h3>
+                        <p>$4.99</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">On Any Sandwich Add: Bacon - $2.50, Mushrooms - $1.75, Tomato - $0.30, American or Pepperjack or Swiss Cheese - $0.40, 
+                            Garnishment On The Side - $0.75 Per Sandwich
+                        </h3>
                     </div>
                 </div>
                 <div id="dinners" class="tab-pane fade">
@@ -663,7 +669,7 @@
                         <p>$5.49</p>
                     </div>
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Pie (Coconut, Lemon, Apple, Cherry, Chocolate Cream, Sugar Cream, Pumpkin, Pecan)</h3>
+                        <h3 class="fs-5 fw-bold text-success">Pie (Coconut, Lemon, Apple, Cherry, Chocolate Cream, Sugar Cream, Pumpkin, Pecan: When in Season)</h3>
                         <p>$4.49</p>
                     </div>
                     <div class="menu-item my-3">
@@ -677,16 +683,28 @@
                 </div>
                 <div id="beverages" class="tab-pane fade">
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Coke, Diet Coke, Caffeine Free Diet Coke, Sprite, Mellow Yellow, Mr. Pibb, Root Beer, Hawaiian Punch, Pink Lemonade, Iced Tea, Sweet Tea, Raspberry Tea (SM)</h3>
+                        <h3 class="fs-5 fw-bold text-success">Coke, Diet Coke, Caffeine Free Diet Coke, Sprite, Mellow Yellow, Mr. Pibb, Root Beer, Hawaiian Punch, Pink Lemonade, Iced Tea, Sweet Tea, Raspberry Flavored (SM)</h3>
                         <p>$2.10</p>
                     </div>
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Coke, Diet Coke, Caffeine Free Diet Coke, Sprite, Mellow Yellow, Mr. Pibb, Root Beer, Hawaiian Punch, Pink Lemonade, Iced Tea, Sweet Tea, Raspberry Tea (MED)</h3>
+                        <h3 class="fs-5 fw-bold text-success">Coke, Diet Coke, Caffeine Free Diet Coke, Sprite, Mellow Yellow, Mr. Pibb, Root Beer, Hawaiian Punch, Pink Lemonade, Iced Tea, Sweet Tea, Raspberry Flavored (SM Flavored)</h3>
+                        <p>$2.25</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Coke, Diet Coke, Caffeine Free Diet Coke, Sprite, Mellow Yellow, Mr. Pibb, Root Beer, Hawaiian Punch, Pink Lemonade, Iced Tea, Sweet Tea, Raspberry Flavored (MED)</h3>
                         <p>$2.30</p>
                     </div>
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Coke, Diet Coke, Caffeine Free Diet Coke, Sprite, Mellow Yellow, Mr. Pibb, Root Beer, Hawaiian Punch, Pink Lemonade, Iced Tea, Sweet Tea, Raspberry Tea (LG)</h3>
+                        <h3 class="fs-5 fw-bold text-success">Coke, Diet Coke, Caffeine Free Diet Coke, Sprite, Mellow Yellow, Mr. Pibb, Root Beer, Hawaiian Punch, Pink Lemonade, Iced Tea, Sweet Tea, Raspberry Flavored (MED Flavored)</h3>
+                        <p>$2.50</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Coke, Diet Coke, Caffeine Free Diet Coke, Sprite, Mellow Yellow, Mr. Pibb, Root Beer, Hawaiian Punch, Pink Lemonade, Iced Tea, Sweet Tea, Raspberry Flavored (LG)</h3>
                         <p>$2.45</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Coke, Diet Coke, Caffeine Free Diet Coke, Sprite, Mellow Yellow, Mr. Pibb, Root Beer, Hawaiian Punch, Pink Lemonade, Iced Tea, Sweet Tea, Raspberry Flavored (LG Flavored)</h3>
+                        <p>$2.65</p>
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Milk</h3>
@@ -780,7 +798,7 @@
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Box of Tenderloins</h3>
-                        <p>$6.00</p>
+                        <p>$60.00</p>
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Bag of Ice</h3>
@@ -807,6 +825,10 @@
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Bowl or Pt. Macaroni & Cheese</h3>
                         <p>$7.29</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Bowl or Pt. Mashed Potatoes</h3>
+                        <p>$5.99</p>
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">X-tra Swiss</h3>
@@ -844,6 +866,14 @@
                         <h3 class="fs-5 fw-bold text-success">Country Fried Steak Only</h3>
                         <p>$8.19</p>
                     </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Chicken Strips Only</h3>
+                        <p>$8.45</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Chop Steak Only</h3>
+                        <p>$8.45</p>
+                    </div>
                 </div>
                 <div id="daily-specials" class="tab-pane fade">
                     <div class="menu-item my-3">
@@ -867,65 +897,190 @@
                         <p>$9.19</p>
                     </div>
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Tuesday - Chicken & Noodles or Country Fried Steak, Mashed Potatoes & Gravy, Choice of: Slaw, Cottage Cheese, Green Beans, Baked Beans, Mac & Cheese</h3>
-                        <p>$9.19</p>
+                        <h3 class="fs-5 fw-bold text-success">Tuesday - Chicken & Noodles or Country Fried Steak, Mashed Potatoes & Gravy, Choice of: Slaw, Cottage Cheese, Green Beans, Baked Beans, Mac & Cheese
+                            or Applesauce, Bread and Butter or Dinner Roll</h3>
+                        <p>$10.35</p>
+                        </h3>
                     </div>
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Wednesday - Beef & Noodles or Country Fried Steak, Mashed Potatoes & Gravy, Choice of: Slaw, Cottage Cheese, Peas, Baked Beans, Mac & Cheese</h3>
+                        <h3 class="fs-5 fw-bold text-success"> Tuesday - 1/2 Chicken & Noodle Dinner</h3>
+                        <p>$9.05</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Tuesday - Pint or Bowl of Chicken & Noodles</h3>
+                        <p>$7.69</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success"> Tuesday - Country Fried Steak Sandwich</h3>
+                        <p>$9.99</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Wednesday - Beef & Noodles or Country Fried Steak or Chicken Strips, Mashed Potatoes & Gravy, Choice of: Slaw, Cottage Cheese, Peas, Baked Beans, Mac & Cheese, or Applesauce, Bread and Butter or Dinner Roll</h3>
                         <p>$10.35</p>
                     </div>
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Thursday - Baked Tenderloin or Meatloaf, Slaw, Cottage Cheese, Green Beans, Baked Beans, Mac & Cheese</h3>
+                        <h3 class="fs-5 fw-bold text-success"> Wednesday - 1/2 Beef & Noodle Dinner</h3>
+                        <p>$9.05</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Wednesday - Pint or Bowl of Beef & Noodles</h3>
+                        <p>$7.69</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Wednesday - Country Fried Steak Sandwich</h3>
+                        <p>$9.99</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Wednesday - Special 1.50 Items Wednesday Only - Mini Tenderloin, Mini Fish, Castle Grilled Cheese, Coney, Hot Dog, Onion Rings, Small Fries(No Spicy French Fries)</h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Small, Medium, or Large Cokes</h3>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Tomato, Cheese, and Flavors extra</h3>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">(No 10% Discounts) (Not Valid With Coupons)</h3>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Thursday - Baked Tenderloin or Meatloaf, Slaw, Cottage Cheese, Green Beans, Baked Beans, Mac & Cheese or Applesauce, Bread and Butter or Dinner Roll</h3>
                         <p>$10.35</p>
                     </div>
                     <div class="menu-item my-3">
-                        <h3 class="fs-5 fw-bold text-success">Friday - Chicken & Noodles & Mashed Potatoes & Gravy, Choice of: Slaw, Cottage Cheese, Baked Beans, Corn, Mac & Cheese</h3>
+                        <h3 class="fs-5 fw-bold text-success">Thursday - 1/2 Baked Tenderloin or Meatloaf</h3>
+                        <p>$8.95
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Thursday - Meatloaf Sandwich</h3>
+                        <p>$8.59</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Thursday - Baked Tenderloin Sandwich</h3>
+                        <p>$8.59</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Friday - Chicken & Noodles & Mashed Potatoes & Gravy, Choice of: Slaw, Cottage Cheese, Baked Beans, Corn, Mac & Cheese or Applesauce, Bread and Butter or Dinner Roll</h3>
                         <p>$10.35</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Friday - 1/2 Chicken & Noodle Dinner</h3>
+                        <p>$8.95</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Friday - Catfish Dinner: Fries, One Side, Bread & Butter or Dinner Roll</h3>
+                        <p>$14.99</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Friday - Catfish Only</h3>
+                        <p>$9.99</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Friday - Catfish Sandwich</h3>
+                        <p>$7.29</p>
+                        </h3>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Friday - 1pc Catfish</h3>
+                        <p>$2.25</p>
+                        </h3>
                     </div>
                     <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Saturday - Pork Chop Dinner, Choice of: Potato, One Side, Bread & Butter or Dinner Roll</h3>
                         <p>$13.99</p>
                     </div>
                     <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Saturday - Shrimp Dinner Choice Of: Fries, Slaw, Bread & Butter or Dinner Roll</h3>
+                        <p>$10.35</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Saturday - Catfish Dinner Choice Of: Fries, Slaw, Bread & Butter or Dinner Roll</h3>
+                        <p>$10.35</p>
+                    </div>
+                    <div class="menu-item my-3">
                         <h3 class="fs-5 fw-bold text-success">Sunday - Pork Chop Dinner, Choice of: Potato, One Side, Bread & Butter or Dinner Roll</h3>
                         <p>$13.99</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Sunday - Beef & Noodles or Country Fried Steak: Mashed Potatoes & Gravy, One Side, Bread & Butter or Dinner Roll</h3>
+                        <p>$10.35</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Sunday - 1/2 Beef & Noodle Dinner</h3>
+                        <p>$8.95</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Sunday - Country Fried Steak Sandwich</h3>
+                        <p>$9.99</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Specials Sides - Mashed Potatoes & Gravy, Baked Beans, Coleslaw, Vegetable of the Day</h3>
+                        <p>$3.49</p>
+                    </div>
+                </div>
+                <div id="Salads" class="tab-pane fade">
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Tossed Salad</h3>
+                        <p>$6.79</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Chef Salad</h3>
+                        <p>$10.39</p>
+                    </div>
+                    <div class="menu-item my-3">
+                        <h3 class="fs-5 fw-bold text-success">Chef Salad (No Meat)</h3>
+                        <p>9.39</p>
                     </div>
                 </div>
             </div>
         </section>
-<section id="contact" class="py-5">
-  <h2 class="display-5 fw-bold text-success mb-4 text-center">Contact Us</h2>
-  <div class="row g-4">
-    <div class="col-md-6">
-      <h3 class="fs-4 fw-bold text-success mb-2">Contact Information</h3>
-      <p>
-        1900 N Courtland Ave, Kokomo, IN 46901, United States<br>
-        Phone: +1 (765) 452-3625
-      </p>
-    </div>
+        <section id="contact" class="py-5">
+          <h2 class="display-5 fw-bold text-success mb-4 text-center">Contact Us</h2>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <h3 class="fs-4 fw-bold text-success mb-2">Contact Information</h3>
+              <p>
+                1900 N Courtland Ave, Kokomo, IN 46901, United States<br>
+                Phone: +1 (765) 452-3625
+              </p>
+            </div>
 
-    <div class="col-md-6">
-      <form action="https://formspree.io/f/mkgbvlkn" method="POST">
-        <div class="mb-3">
-          <label for="name" class="form-label fw-bold">Name <span class="text-danger">*</span></label>
-          <input type="text" id="name" name="name" required class="form-control border-danger">
-        </div>
+            <div class="col-md-6">
+              <form action="https://formspree.io/f/mkgbvlkn" method="POST">
+                <div class="mb-3">
+                  <label for="name" class="form-label fw-bold">Name <span class="text-danger">*</span></label>
+                  <input type="text" id="name" name="name" required class="form-control border-danger">
+                </div>
 
-        <div class="mb-3">
-          <label for="email" class="form-label fw-bold">Email <span class="text-danger">*</span></label>
-          <input type="email" id="email" name="email" required class="form-control border-danger">
-        </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label fw-bold">Email <span class="text-danger">*</span></label>
+                  <input type="email" id="email" name="email" required class="form-control border-danger">
+                </div>
 
-        <div class="mb-3">
-          <label for="message" class="form-label fw-bold">Message <span class="text-danger">*</span></label>
-          <textarea id="message" name="message" rows="5" required class="form-control border-danger"></textarea>
-        </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label fw-bold">Message <span class="text-danger">*</span></label>
+                  <textarea id="message" name="message" rows="5" required class="form-control border-danger"></textarea>
+                </div>
 
-        <button type="submit" class="btn btn-danger">Send Message</button>
-      </form>
-    </div>
-  </div>
-</section>
+                <button type="submit" class="btn btn-danger">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </section>
 
     </main>
 

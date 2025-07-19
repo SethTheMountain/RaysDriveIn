@@ -1,236 +1,296 @@
-/* === Global Typography & Layout === */
-body {
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  background-color: #f8f9fa;
-  color: #212529;
+/* 1) Color Palette */
+:root {
+  --color-blue:    #e0f7fa;  /* light cyan */
+  --color-red:     #ffebee;  /* light pink */
+  --color-green:   #e8f5e9;  /* light mint */
+  --color-yellow:  #fff9c4;  /* light lemon */
+  --color-dark:    #212529;
+  --color-light:   #f8f9fa;
+
+  --shadow-sm:     0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:     0 4px 16px rgba(0,0,0,0.12);
+  --transition:    all 0.4s ease;
+}
+
+/* 2) Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* 3) Reset & Base */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-dark);
+  background-color: var(--color-light);
   line-height: 1.6;
-  padding-top: 100px; /* Space for fixed navbar */
+  scroll-behavior: smooth;
+  font-size: 16px; /* Base font size for rem units */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+/* 4) Header & Sticky Navbar */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* === Navbar === */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1030;
-  background-color: #dc3545 !important;
+  background-color: var(--color-blue);
+  box-shadow: var(--shadow-md);
   padding: 1rem 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  animation: slideDown 0.8s ease-out forwards;
 }
 
-
+/* 5) Navbar Brand & Links */
 .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
   font-size: 1.75rem;
-  font-weight: bold;
+  color: var(--color-dark);
 }
-
-.navbar-nav .nav-link {
-  font-weight: 500;
-  margin-left: 1rem;
-  transition: color 0.3s;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
-  color: #ffc107 !important;
-}
-
-/* === Slideshow === */
-.slide-container {
+.nav-link {
+  color: var(--color-dark);
+  margin-left: 1.5rem;
   position: relative;
-  aspect-ratio: 16 / 9;
-  background-color: #e9ecef;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  margin-bottom: 2rem;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  transition: var(--transition);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--color-red);
+  left: 50%;
+  bottom: -4px;
+  transition: var(--transition);
+}
+.nav-link:hover {
+  color: var(--color-red);
+}
+.nav-link:hover::after {
+  left: 0;
+  width: 100%;
 }
 
+/* 6) Headings */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.6s both;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+/* 7) Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+.btn-primary { background: var(--color-green); color: var(--color-dark); }
+.btn-accent  { background: var(--color-yellow); color: var(--color-dark); }
+.btn:hover {
+  transform: translateY(-3px) rotate(2deg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 8) Sections */
+section {
+  padding: 4rem 2rem;
+  background: var(--color-light);
+  margin-bottom: 3rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn 0.8s both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 9) Animations */
+@keyframes fadeIn {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fadeInUp {
+  0%   { opacity: 0; transform: translateY(30px) rotateX(10deg); }
+  100% { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-100%); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes rotateIn {
+  0% { opacity: 0; transform: rotate(-15deg) scale(0.8); }
+  100% { opacity: 1; transform: rotate(0) scale(1); }
+}
+@keyframes bounceIn {
+  0% { opacity: 0; transform: translateY(-50px); }
+  60% { opacity: 1; transform: translateY(10px); }
+  80% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* 10) Slideshow */
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+.slide-container {
+  width: 100%;
+  height: 400px; /* Reduced height for better visibility */
+  position: relative;
+}
 .slide {
-  position: absolute;
+  display: none;          /* hide all slides */
+  position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.5s ease;
+  animation: rotateIn 1s ease-out forwards;
 }
-
+.slide.active {
+  display: block !important;  /* override Bootstrap’s d-none */
+  animation: bounceIn 1.2s ease-out forwards;
+}
 .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: #dee2e6;
   display: block;
+  width: 100%;
+  height: 100%; /* Fill container height */
+  object-fit: cover; /* Ensure image fills container without distortion */
+  margin: 0 auto;
+  transition: var(--transition);
+}
+.slide.active img:hover {
+  transform: scale(1.05) rotate(1deg);
 }
 
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(220, 53, 69, 0.8);
-  color: white;
+  background-color: var(--color-red);
+  color: var(--color-light);
   border: none;
-  padding: 0.75rem 1rem;
+  border-radius: 50%;
+  padding: 0.8rem;
   font-size: 1.5rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s ease-in-out;
-  z-index: 10;
+  cursor: pointer;
+  transition: var(--transition);
 }
-
 .prev:hover, .next:hover {
-  background-color: rgba(220, 53, 69, 1);
+  background-color: var(--color-green);
+  transform: translateY(-50%) scale(1.1);
+}
+.prev { left: 1rem; }
+.next { right: 1rem; }
+
+/* 11) Cards */
+.card {
+  background: var(--color-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  transition: var(--transition);
+  animation: pulse 2s infinite ease-in-out;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-5px) rotate(3deg);
 }
 
-.prev {
-  left: 1rem;
+/* 12) Footer Phone Number Highlight */
+.phone-link {
+  color: lightskyblue;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.phone-link:hover {
+  color: yellow;
+  text-decoration: underline;
 }
 
-.next {
-  right: 1rem;
+/* 13) Menu Tabs Highlight */
+#menu .nav-pills .nav-link {
+  background: var(--color-light);
+  border: 2px solid var(--color-blue);
+  border-radius: 30px;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  transition: var(--transition);
+}
+
+#menu .nav-pills .nav-link:hover {
+  background: red;
+  color: yellow;
+  transform: scale(1.05);
+}
+
+#menu .nav-pills .nav-link.active {
+  background: var(--color-green);
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+}
+
+/* 14) Responsive */
+@media (max-width: 1024px) {
+  .navbar { padding: 0.75rem 1.5rem; }
+  .nav-link { margin-left: 1rem; }
+  section { padding: 3rem 1.5rem; }
+  .slide-container { height: 350px; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.5rem; }
+  .navbar-nav { flex-direction: column; align-items: center; }
+  #menu .nav-pills { flex-wrap: wrap; justify-content: center; }
+  .menu-item { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 768px) {
-  .slide-container {
-    aspect-ratio: 4 / 3;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  .navbar-brand {
-    font-size: 1.5rem;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 0.95rem;
-    margin-left: 0.5rem;
-  }
-
-  section h2 {
-    font-size: 1.5rem;
-  }
-
-  .menu-item h3 {
-    font-size: 1rem;
-  }
-
-  .prev, .next {
-    padding: 0.5rem;
-    font-size: 1.2rem;
-  }
+  .navbar { padding: 0.75rem 1rem; }
+  .nav-link { margin-left: 1rem; }
+  section { padding: 2rem 1rem; }
+  .slide-container { height: 300px; } /* Further reduce height for mobile */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.4rem; }
+  body { font-size: 14px; }
+  .btn { padding: 0.6rem 1.2rem; }
+  .card { padding: 1rem; }
+  #menu .nav-pills .nav-link { padding: 0.6rem 1.2rem; margin: 0.3rem; }
 }
 
-/* === Section Headings === */
-section h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #198754;
-}
-
-/* === Cards (Reviews, etc) === */
-.card {
-  border: none;
-  border-left: 4px solid #dc3545;
-  background-color: #fff;
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* === Menu Items === */
-.menu-item {
-  padding: 1rem;
-  border-bottom: 1px solid #dee2e6;
-}
-
-.menu-item h3 {
-  font-size: 1.125rem;
-  margin-bottom: 0.25rem;
-}
-
-.menu-item p {
-  font-weight: 500;
-  color: #6c757d;
-}
-
-/* === Contact Form === */
-form label {
-  font-weight: 600;
-}
-
-form input, form textarea {
-  border: 2px solid #dc3545;
-  border-radius: 0.375rem;
-}
-
-form input:focus, form textarea:focus {
-  border-color: #198754;
-  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
-}
-
-/* === Footer === */
-footer {
-  background-color: #198754;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-weight: 500;
-}
-
-/* === Responsive Image Fallback === */
-img {
-  background-color: #dee2e6;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* === Accessibility === */
-.visually-hidden-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 1rem;
-  clip: auto;
-  clip-path: none;
-  background-color: #dc3545;
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 0.375rem;
-  z-index: 9999;
-}
-
-/* === Phone Link === */
-.phone-link {
-  color: #ffc107;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.phone-link:hover,
-.phone-link:focus {
-  color: #fff;
-  text-decoration: underline;
+@media (max-width: 480px) {
+  .navbar { padding: 0.5rem 0.75rem; }
+  .navbar-brand { font-size: 1.5rem; }
+  .nav-link { margin-left: 0.75rem; font-size: 0.9rem; }
+  section { padding: 1.5rem 0.75rem; }
+  .slide-container { height: 250px; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+  body { font-size: 12px; }
+  .btn { padding: 0.5rem 1rem; }
+  .card { padding: 0.75rem; }
+  #menu .nav-pills .nav-link { padding: 0.5rem 1rem; margin: 0.2rem; font-size: 0.9rem; }
+  .prev, .next { padding: 0.6rem; font-size: 1.2rem; }
 }
